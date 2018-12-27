@@ -5,7 +5,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Dashboard from "./Dashboard";
 import Login from './Login/Login'
-import PrivateRoute from './Utiity/PrivateRoute'
+import PageRoute from './Utiity/PageRouter'
 import NewQuestion from './NewQuestion'
 import {connect} from 'react-redux'
 import {handleInitialData} from "../actions/shared"
@@ -29,10 +29,10 @@ class App extends Component {
                         : <div>
                             <Route path="/login" component={Login}/>
                             <Route path="/register" component={Registration}/>
-                            <PrivateRoute path="/" exact component={Dashboard}/>
-                            <PrivateRoute path="/leaderboard" component={Leaderboard}/>
-                            <PrivateRoute path="/add" component={NewQuestion}/>
-                            <PrivateRoute path="/questions/:question_id" component={Question}/>
+                            <PageRoute path="/" exact component={Dashboard}/>
+                            <PageRoute path="/leaderboard" component={Leaderboard}/>
+                            <PageRoute path="/add" component={NewQuestion}/>
+                            <PageRoute path="/questions/:question_id" component={Question}/>
                         </div>}
                 </Fragment>
             </Router>
@@ -47,5 +47,3 @@ function mapStateToProps({questions, users}) {
 }
 
 export default connect(mapStateToProps)(App);
-//TODO: optimistic behavior
-//TODO: Show friendly message when page does not exist

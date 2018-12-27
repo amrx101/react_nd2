@@ -6,7 +6,7 @@ import {isEmpty} from "../../utils/helpers";
 import Nav from './Nav'
 
 
-const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => (
+const PageRoute = ({component: Component, isAuthenticated, ...rest}) => (
     <Route {...rest} render={(props) => {
         return (
             isAuthenticated
@@ -33,4 +33,4 @@ function mapStateToProps({authedUser}) {
     }
 }
 
-export default connect(mapStateToProps, null, null, {pure: false,})(PrivateRoute)
+export default connect(mapStateToProps, null, null, {pure: false,})(PageRoute)
