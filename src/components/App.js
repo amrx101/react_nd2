@@ -12,7 +12,6 @@ import {handleInitialData} from "../actions/shared"
 import Leaderboard from "./Leaderboard/Leaderboard"
 import Question from './Question/Question'
 import Registration from "./Registration/Registration";
-import {isEmpty} from "../utils/helpers";
 
 class App extends Component {
     componentDidMount() {
@@ -38,6 +37,14 @@ class App extends Component {
             </Router>
         );
     }
+}
+
+function isEmpty(obj) {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
 }
 
 function mapStateToProps(_ref) {
