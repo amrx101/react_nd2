@@ -15,11 +15,13 @@ class PollSummary extends Component {
 
 }
 
-function mapStateToProps({questions}, {id}) {
+function mapStateToProps(_ref, _ref2) {
+    var questions = _ref.questions;
+    var id = _ref2.id;
+
     return {
         question: questions[id]
-    }
-
+    };
 }
 
 export default connect(mapStateToProps)(PollSummary)

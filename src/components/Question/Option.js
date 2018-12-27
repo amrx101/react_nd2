@@ -41,18 +41,23 @@ class Option extends Component {
     }
 }
 
-function mapStateToProps({authedUser, questions, users}, {questionId, optionName}) {
-    const question = questions[questionId]
-    const option = question[optionName]
-    const currentUser = users[authedUser]
+function mapStateToProps(_ref, _ref2) {
+    var authedUser = _ref.authedUser;
+    var questions = _ref.questions;
+    var users = _ref.users;
+    var questionId = _ref2.questionId;
+    var optionName = _ref2.optionName;
+
+    var question = questions[questionId];
+    var option = question[optionName];
+    var currentUser = users[authedUser];
 
     return {
-        option,
+        option: option,
         isVoted: option.votes.includes(authedUser),
         showResults: Object.keys(currentUser.answers).includes(questionId),
-        percentage: ((option.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length)) * 100).toFixed(2),
-        optionName
-    }
+        percentage: (option.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100).toFixed(2),
+        optionName: optionName
+    };
 }
-
 export default connect(mapStateToProps)(Option)

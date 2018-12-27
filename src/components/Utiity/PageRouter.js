@@ -27,10 +27,12 @@ const PageRoute = ({component: Component, isAuthenticated, ...rest}) => (
     }}/>
 )
 
-function mapStateToProps({authedUser}) {
+function mapStateToProps(_ref) {
+    var authedUser = _ref.authedUser;
+
     return {
         isAuthenticated: !isEmpty(authedUser)
-    }
+    };
 }
 
 export default connect(mapStateToProps, null, null, {pure: false,})(PageRoute)

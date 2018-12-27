@@ -60,16 +60,18 @@ class Login extends Component {
     }
 }
 
-function mapStateToProps({users, authedUser}) {
+function mapStateToProps(_ref) {
+    var users = _ref.users;
+    var authedUser = _ref.authedUser;
+
     return {
-        users: Object.values(users).map((user) => {
-            return ({
+        users: Object.values(users).map(function (user) {
+            return {
                 id: user.id,
                 name: user.name
-            })
+            };
         }),
         username: authedUser
-    }
+    };
 }
-
 export default connect(mapStateToProps)(Login)

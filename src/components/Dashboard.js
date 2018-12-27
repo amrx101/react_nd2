@@ -66,21 +66,30 @@ class Dashboard extends Component {
     }
 }
 
-function mapStateToProps({questions, authedUser}) {
+function mapStateToProps(_ref) {
+    var questions = _ref.questions;
+    var authedUser = _ref.authedUser;
 
-    const notAnsweredQuestions = Object.values(questions).filter((question) =>
-        !question.optionOne.votes.includes(authedUser) && !question.optionTwo.votes.includes(authedUser))
 
-    const answeredQuestions = Object.values(questions).filter((question) =>
-        question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)
-    )
+    var notAnsweredQuestions = Object.values(questions).filter(function (question) {
+        return !question.optionOne.votes.includes(authedUser) && !question.optionTwo.votes.includes(authedUser);
+    });
+
+    var answeredQuestions = Object.values(questions).filter(function (question) {
+        return question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser);
+    });
 
     return {
-        notAnsweredQIds: Object.values(notAnsweredQuestions)
-            .sort((a, b) => b.timestamp - a.timestamp).map((q) => q.id),
-        answeredQIds: Object.values(answeredQuestions)
-            .sort((a, b) => b.timestamp - a.timestamp).map((q) => q.id)
-    }
+        notAnsweredQIds: Object.values(notAnsweredQuestions).sort(function (a, b) {
+            return b.timestamp - a.timestamp;
+        }).map(function (q) {
+            return q.id;
+        }),
+        answeredQIds: Object.values(answeredQuestions).sort(function (a, b) {
+            return b.timestamp - a.timestamp;
+        }).map(function (q) {
+            return q.id;
+        })
+    };
 }
-
 export default connect(mapStateToProps)(Dashboard)

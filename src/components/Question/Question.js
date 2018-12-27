@@ -38,16 +38,20 @@ class Question extends Component {
     }
 }
 
-function mapStateToProps({questions, users, authedUser}, props) {
-    const {question_id} = props.match.params
-    const question = questions[question_id]
-    const user = users[authedUser]
+function mapStateToProps(_ref, props) {
+    var questions = _ref.questions;
+    var users = _ref.users;
+    var authedUser = _ref.authedUser;
+    var question_id = props.match.params.question_id;
+
+    var question = questions[question_id];
+    var user = users[authedUser];
 
     return {
-        question,
-        authedUser,
+        question: question,
+        authedUser: authedUser,
         showResults: Object.keys(user.answers).includes(question_id)
-    }
+    };
 }
 
 export default connect(mapStateToProps)(Question)

@@ -27,10 +27,13 @@ class UserSummary extends Component {
     }
 }
 
-function mapStateToProps({users}, {id}) {
+function mapStateToProps(_ref, _ref2) {
+    var users = _ref.users;
+    var id = _ref2.id;
+
     return {
         user: users[id]
-    }
+    };
 }
 
 export default connect(mapStateToProps)(UserSummary)

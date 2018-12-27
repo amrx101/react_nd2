@@ -17,11 +17,13 @@ class Leaderboard extends Component {
     }
 }
 
-function mapStateToProps({users}) {
+function mapStateToProps(_ref) {
+    var users = _ref.users;
     return {
-        users: Object.keys(users)
-            .sort((a, b) => ((Object.keys(users[b].answers).length + users[b].questions.length) - (Object.keys(users[a].answers).length + users[a].questions.length)))
-    }
+        users: Object.keys(users).sort(function (a, b) {
+            return Object.keys(users[b].answers).length + users[b].questions.length - (Object.keys(users[a].answers).length + users[a].questions.length);
+        })
+    };
 }
 
 export default connect(mapStateToProps)(Leaderboard)
