@@ -3,7 +3,7 @@ import {Redirect, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Container, Row} from 'reactstrap'
 import {isEmpty} from "../../utils/helpers";
-import Nav from './Nav'
+import Nav from './Navigation'
 
 
 const PageRoute = ({component: Component, isAuthenticated, ...rest}) => (
