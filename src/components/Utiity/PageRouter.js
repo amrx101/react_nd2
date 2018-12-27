@@ -2,7 +2,6 @@ import React, {Fragment} from 'react'
 import {Redirect, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Container, Row} from 'reactstrap'
-import {isEmpty} from "../../utils/helpers";
 import Nav from './Navigation'
 
 
@@ -26,6 +25,14 @@ const PageRoute = ({component: Component, isAuthenticated, ...rest}) => (
         )
     }}/>
 )
+
+function isEmpty(obj) {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
 function mapStateToProps(_ref) {
     var authedUser = _ref.authedUser;
