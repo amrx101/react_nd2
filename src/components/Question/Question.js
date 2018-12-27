@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Row} from 'reactstrap'
 import {handleAnswerQuestion} from '../../actions/questions'
 import Option from "./Option"
-import UserSummary from '../common/UserSummary'
+import UserSummary from '../Utiity/UserSummary'
 import MissingQuestion from "./MissingQuestion";
 
 class Question extends Component {

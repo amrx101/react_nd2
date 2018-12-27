@@ -5,7 +5,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Dashboard from "./Dashboard";
 import Login from './Login/Login'
-import PrivateRoute from './common/PrivateRoute'
+import PrivateRoute from './Utiity/PrivateRoute'
 import NewQuestion from './NewQuestion'
 import {connect} from 'react-redux'
 import {handleInitialData} from "../actions/shared"
