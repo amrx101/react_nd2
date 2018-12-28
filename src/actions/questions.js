@@ -1,6 +1,6 @@
 import {hideLoading, showLoading} from 'react-redux-loading'
 import {ADD_QUESTION, RECEIVE_QUESTIONS} from "./types";
-import {saveQuestion, saveQuestionAnswer} from "../utils/_DATA"
+import {saveQuestion, saveQuestionAnswer} from "../api/_DATA"
 import {handleInitialData} from "./shared";
 
 

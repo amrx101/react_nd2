@@ -1,5 +1,5 @@
 import {hideLoading, showLoading} from 'react-redux-loading'
-import {addUser} from "../utils/_DATA"
+import {addUser} from "../api/_DATA"
 
 import {RECEIVE_USERS} from "./types";
 
